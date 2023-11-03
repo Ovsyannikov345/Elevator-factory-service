@@ -1,7 +1,10 @@
 import React from 'react';
+import Header from '../components/Header';
 
 const OrdersPage = () => {
-    return <h1>This is orders page</h1>
+    return (
+        <Header />
+    );
 }
 
 export default OrdersPage;
