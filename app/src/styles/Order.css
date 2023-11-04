@@ -1,0 +1,28 @@
+.Order {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.order-info {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.Order p {
+    font-size: 20px;
+    color: black;
+}
+
+.order-id {
+    width: 10px;
+}
+
+.order-title {
+    width: 200px;
+}

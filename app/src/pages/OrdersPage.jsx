@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import OrderList from "../components/OrderList";
 import Footer from "../components/Footer";
 
+import "../styles/OrdersPage.css";
+
 const OrdersPage = () => {
     const [orders, setOrders] = useState([]);
 
@@ -26,13 +28,14 @@ const OrdersPage = () => {
     };
 
     return (
-        <>
+        <div className="OrdersPage">
             <Header />
             <main>
+                <h2>Orders</h2>
                 <OrderList orders={orders} detailsHandler={showOrderDetails} />
             </main>
             <Footer />
-        </>
+        </div>
     );
 };
 
