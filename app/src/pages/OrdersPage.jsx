@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import OrderList from "../components/OrderList";
+import Footer from "../components/Footer";
 
 const OrdersPage = () => {
     const [orders, setOrders] = useState([]);
@@ -30,6 +31,7 @@ const OrdersPage = () => {
             <main>
                 <OrderList orders={orders} detailsHandler={showOrderDetails} />
             </main>
+            <Footer />
         </>
     );
 };
