@@ -4,7 +4,7 @@ import DetailsButton from "./DetailsButton";
 const Order = ({ orderData, detailsHandler }) => {
     const showDetails = () => {
         detailsHandler(orderData.id);
-    }
+    };
 
     return (
         <div className="Order">
@@ -12,7 +12,7 @@ const Order = ({ orderData, detailsHandler }) => {
             <p className="order-title">{orderData.title}</p>
             <p className="order-status">{orderData.status}</p>
             <div className="order-buttons">
-                <DetailsButton handleClick={showDetails} />
+                <DetailsButton handleClick={showDetails}>Details</DetailsButton>
             </div>
         </div>
     );

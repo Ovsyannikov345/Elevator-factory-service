@@ -1,8 +1,8 @@
 import React from "react";
 
-const DetailsButton = ({ handleClick }) => {
+const DetailsButton = ({ children, ...props }) => {
     return (
-        <button className="DetailsButton" onClick={handleClick}>
+        <button className="DetailsButton" onClick={props.handleClick}>
             Details
         </button>
     );
