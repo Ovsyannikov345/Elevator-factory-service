@@ -7,7 +7,7 @@ import OrderForm from "../components/OrderForm";
 
 const OrderCreationPage = () => {
     return (
-        <div className="OrderCreationPage">
+        <div className={classes.orderCreationPage}>
             <Header />
             <main className={classes.main}>
                 <OrderForm />

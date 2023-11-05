@@ -3,6 +3,7 @@
     height: 41px;
     display: flex;
     justify-content: center;
+    justify-self: flex-end;
     padding: 10px 0px;
 }
 
