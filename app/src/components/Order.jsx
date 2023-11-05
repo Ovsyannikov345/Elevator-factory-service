@@ -5,7 +5,7 @@ import "../styles/Order.css";
 
 const Order = ({ orderData, detailsHandler }) => {
     const showDetails = () => {
-        detailsHandler(orderData.id);
+        detailsHandler(orderData);
     };
 
     return (

@@ -4,9 +4,21 @@ import OrderList from "../components/OrderList";
 import Footer from "../components/Footer";
 
 import "../styles/OrdersPage.css";
+import Modal from "../components/UI/Modal/Modal";
+import OrderDetails from "../components/OrderDetails";
 
 const OrdersPage = () => {
     const [orders, setOrders] = useState([]);
+    const [modalActive, setModalActive] = useState(false);
+    const [modalOrder, setModalOrder] = useState({
+        id: 1,
+        title: "",
+        status: "",
+        creationDate: "",
+        description: "",
+        customer: "",
+        completeTime: "",
+    });
 
     useEffect(() => {
         loadOrders();
@@ -19,16 +31,17 @@ const OrdersPage = () => {
         setOrders(data.orders);
     };
 
-    const showOrderDetails = (id) => {
-        const order = orders.find((order) => order.id === id);
-
-        console.log(
-            `id: ${order.id} title: ${order.title} status: ${order.status}`
-        );
+    const showOrderDetails = (order) => {
+        console.log(order);
+        setModalOrder(order);
+        setModalActive(true);
     };
 
     return (
         <div className="OrdersPage">
+            <Modal visible={modalActive} setVisible={setModalActive}>
+                <OrderDetails order={modalOrder} />
+            </Modal>
             <Header />
             <main>
                 <h2>Orders</h2>
