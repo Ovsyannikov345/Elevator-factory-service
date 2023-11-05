@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Modal from "../components/UI/Modal/Modal";
 import OrderDetails from "../components/OrderDetails";
 
-import "../styles/OrdersPage.css";
+import classes from "../styles/OrdersPage.module.css";
 
 const OrdersPage = ({ orders, deleteOrder }) => {
     const [modalActive, setModalActive] = useState(false);
@@ -20,19 +20,18 @@ const OrdersPage = ({ orders, deleteOrder }) => {
     });
 
     const showOrderDetails = (order) => {
-        console.log(order);
         setModalOrder(order);
         setModalActive(true);
     };
 
     return (
-        <div className="OrdersPage">
+        <div className={classes.ordersPage}>
             <Modal visible={modalActive} setVisible={setModalActive}>
                 <OrderDetails order={modalOrder} />
             </Modal>
             <Header />
-            <main>
-                <h2>Orders</h2>
+            <main className={classes.main}>
+                <h2 className={classes.pageHeader}>Orders</h2>
                 <OrderList orders={orders} detailsHandler={showOrderDetails} deleteHandler={deleteOrder} />
             </main>
             <Footer />

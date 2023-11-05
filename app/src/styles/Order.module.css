@@ -1,4 +1,4 @@
-.Order {
+.order {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -8,26 +8,26 @@
     border-radius: 10px;
 }
 
-.order-info {
+.orderInfo {
     display: flex;
     align-items: center;
     gap: 45px;
 }
 
-.Order p {
+.orderId, .orderTitle, .orderStatus, .orderButtons {
     font-size: 20px;
     color: black;
 }
 
-.order-id {
+.orderId {
     width: 10px;
 }
 
-.order-title {
+.orderTitle {
     width: 200px;
 }
 
-.order-buttons {
+.orderButtons {
     display: flex;
     gap: 5px;
 }

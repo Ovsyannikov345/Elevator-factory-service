@@ -1,20 +1,29 @@
 import React from "react";
 import Button from "./UI/Button/Button";
 
-import "../styles/Order.css";
-
+import classes from "../styles/Order.module.css";
 
 const Order = ({ orderData, detailsHandler, deleteHandler }) => {
     return (
-        <div className="Order">
-            <div className="order-info">
-                <p className="order-id">{orderData.id}</p>
-                <p className="order-title">{orderData.title}</p>
-                <p className="order-status">{orderData.status}</p>
+        <div className={classes.order}>
+            <div className={classes.orderInfo}>
+                <p className={classes.orderId}>
+                    {orderData.id}
+                </p>
+                <p className={classes.orderTitle}>
+                    {orderData.title}
+                </p>
+                <p className={classes.orderStatus}>
+                    {orderData.status}
+                </p>
             </div>
-            <div className="order-buttons">
-                <Button onClick={() => detailsHandler(orderData)}>Details</Button>
-                <Button onClick={() => deleteHandler(orderData.id)}>Delete</Button>
+            <div className={classes.orderButtons}>
+                <Button onClick={() => detailsHandler(orderData)}>
+                    Details
+                </Button>
+                <Button onClick={() => deleteHandler(orderData.id)}>
+                    Delete
+                </Button>
             </div>
         </div>
     );

@@ -1,11 +1,11 @@
 import React from "react";
 import Order from "./Order";
 
-import "../styles/OrderList.css";
+import classes from "../styles/OrderList.module.css";
 
 const OrderList = ({ orders, detailsHandler, deleteHandler }) => {
     return (
-        <div className="OrderList">
+        <div className={classes.orderList}>
             {orders.map((order) => (
                 <Order key={order.id} orderData={order} detailsHandler={detailsHandler} deleteHandler={deleteHandler} />
             ))}

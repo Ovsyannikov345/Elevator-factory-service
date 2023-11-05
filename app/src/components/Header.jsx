@@ -1,12 +1,12 @@
 import React from 'react';
 import Navigation from './Navigation';
 
-import "../styles/Header.css";
+import classes from "../styles/Header.module.css";
 
 const Header = () => {
     return (
-        <header className="Header">
-            <h1>Elevator factory</h1>
+        <header className={classes.header}>
+            <h1 className={classes.headerText}>Elevator factory</h1>
             <Navigation />
         </header>
     );

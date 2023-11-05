@@ -1,14 +1,14 @@
-.Navigation {
+.navigation {
     display: flex;
     gap: 25px;
 }
 
-.Navigation a {
+.navigationLink {
     font-size: 22px;
     text-decoration: none;
     color: #565656;
 }
 
-.Navigation a:hover {
+.navigationLink:hover {
     text-decoration: underline;
 }

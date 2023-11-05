@@ -1,15 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import "../styles/Navigation.css";
+import classes from "../styles/Navigation.module.css";
 
 const Navigation = () => {
     return (
-        <nav className='Navigation'>
-            <Link to='/orders'>All orders</Link>
-            <Link to='/orders/create'>Create order</Link>
+        <nav className={classes.navigation}>
+            <Link to="/orders" className={classes.navigationLink}>
+                All orders
+            </Link>
+            <Link to="/orders/create" className={classes.navigationLink}>
+                Create order
+            </Link>
         </nav>
     );
-}
+};
 
 export default Navigation;

@@ -1,4 +1,4 @@
-.Header {
+.header {
     display: flex;
     align-items: baseline;
     gap: 40px;
@@ -7,7 +7,7 @@
     background-color: white;
 }
 
-.Header h1 {
+.headerText {
     margin-left: 40px;
     padding: 15px 0px;
     font-size: 36px;
