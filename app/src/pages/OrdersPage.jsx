@@ -7,7 +7,7 @@ import OrderDetails from "../components/OrderDetails";
 
 import "../styles/OrdersPage.css";
 
-const OrdersPage = ({ orders }) => {
+const OrdersPage = ({ orders, deleteOrder }) => {
     const [modalActive, setModalActive] = useState(false);
     const [modalOrder, setModalOrder] = useState({
         id: 1,
@@ -33,7 +33,7 @@ const OrdersPage = ({ orders }) => {
             <Header />
             <main>
                 <h2>Orders</h2>
-                <OrderList orders={orders} detailsHandler={showOrderDetails} />
+                <OrderList orders={orders} detailsHandler={showOrderDetails} deleteHandler={deleteOrder} />
             </main>
             <Footer />
         </div>

@@ -4,11 +4,7 @@ import Button from "./UI/Button/Button";
 import "../styles/Order.css";
 
 
-const Order = ({ orderData, detailsHandler }) => {
-    const showDetails = () => {
-        detailsHandler(orderData);
-    };
-
+const Order = ({ orderData, detailsHandler, deleteHandler }) => {
     return (
         <div className="Order">
             <div className="order-info">
@@ -17,7 +13,8 @@ const Order = ({ orderData, detailsHandler }) => {
                 <p className="order-status">{orderData.status}</p>
             </div>
             <div className="order-buttons">
-                <Button onClick={showDetails}>Details</Button>
+                <Button onClick={() => detailsHandler(orderData)}>Details</Button>
+                <Button onClick={() => deleteHandler(orderData.id)}>Delete</Button>
             </div>
         </div>
     );

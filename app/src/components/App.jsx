@@ -22,8 +22,7 @@ const App = () => {
 
         if (orders) {
             maxId = Math.max(...orders.map((order) => order.id));
-        }
-        else {
+        } else {
             maxId = 0;
         }
 
@@ -36,10 +35,22 @@ const App = () => {
         setOrders([...orders, order]);
     };
 
+    const deleteOrder = (id) => {
+        setOrders(orders.filter((order) => order.id !== id));
+    };
+
     return (
         <Routes>
-            <Route path="/orders/create" element={<OrderCreationPage createOrder={createOrder}/>} />
-            <Route path="/orders" element={<OrdersPage orders={orders}/>} />
+            <Route
+                path="/orders/create"
+                element={<OrderCreationPage createOrder={createOrder} />}
+            />
+            <Route
+                path="/orders"
+                element={
+                    <OrdersPage orders={orders} deleteOrder={deleteOrder} />
+                }
+            />
             <Route path="*" element={<Navigate to="/orders" replace />} />
         </Routes>
     );

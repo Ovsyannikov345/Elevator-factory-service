@@ -26,3 +26,8 @@
 .order-title {
     width: 200px;
 }
+
+.order-buttons {
+    display: flex;
+    gap: 5px;
+}
