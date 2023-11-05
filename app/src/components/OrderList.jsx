@@ -4,6 +4,10 @@ import Order from "./Order";
 import classes from "../styles/OrderList.module.css";
 
 const OrderList = ({ orders, detailsHandler, deleteHandler }) => {
+    if (orders.length === 0) {
+        return <h3 className={classes.emptyList}>No orders found</h3>;
+    }
+
     return (
         <div className={classes.orderList}>
             {orders.map((order) => (
