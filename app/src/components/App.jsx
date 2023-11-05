@@ -20,7 +20,7 @@ const App = () => {
     const createOrder = (orderData) => {
         var maxId;
 
-        if (orders) {
+        if (orders && orders.length > 0) {
             maxId = Math.max(...orders.map((order) => order.id));
         } else {
             maxId = 0;
