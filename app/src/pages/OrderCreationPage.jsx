@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import OrderForm from "../components/OrderForm";
+import OrderForm from "../components/UI/OrderForm/OrderForm";
 
 import classes from "../styles/OrderCreationPage.module.css";
 
-const OrderCreationPage = ({ createOrder }) => {
+const OrderCreationPage = ({ creationHandler }) => {
     return (
         <div className={classes.orderCreationPage}>
             <Header />
             <main className={classes.main}>
-                <OrderForm createHandler={createOrder} />
+                <OrderForm submitHandler={creationHandler}>Create</OrderForm>
             </main>
             <Footer />
         </div>

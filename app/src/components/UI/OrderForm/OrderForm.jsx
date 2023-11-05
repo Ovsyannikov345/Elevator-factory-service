@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/UI/Button/Button";
-import Input from "../components/UI/Input/Input";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
 
-import classes from "../styles/OrderForm.module.css";
+import classes from "./OrderForm.module.css";
 
-const OrderForm = ({ createHandler }) => {
-    const [order, setOrder] = useState({
-        title: "",
-        status: "",
-        description: "",
-        customer: "",
-        completeTime: "",
-    });
+const OrderForm = ({ children, orderData, submitHandler }) => {
+    const [order, setOrder] = useState(
+        orderData
+            ? orderData
+            : {
+                  title: "",
+                  status: "",
+                  description: "",
+                  customer: "",
+                  completeTime: "",
+              }
+    );
 
     const router = useNavigate();
 
-    const createOrder = (e) => {
+    const submit = (e) => {
         e.preventDefault();
-        createHandler(order);
+        submitHandler(order);
         setOrder({
             title: "",
             status: "",
@@ -32,7 +36,7 @@ const OrderForm = ({ createHandler }) => {
 
     return (
         <form className={classes.form}>
-            <h2 className={classes.formHeader}>Create order</h2>
+            <h2 className={classes.formHeader}>{children} order</h2>
             <div className={classes.inputs}>
                 <Input
                     type="text"
@@ -75,7 +79,7 @@ const OrderForm = ({ createHandler }) => {
                     }
                 />
             </div>
-            <Button onClick={createOrder}>Create</Button>
+            <Button onClick={submit}>{children}</Button>
         </form>
     );
 };

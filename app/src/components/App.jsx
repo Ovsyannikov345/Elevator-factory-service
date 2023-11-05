@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import OrdersPage from "../pages/OrdersPage";
 import OrderCreationPage from "../pages/OrderCreationPage";
+import OrderEditionPage from "../pages/OrderEditionPage";
 
 const App = () => {
     const [orders, setOrders] = useState([]);
@@ -39,11 +40,22 @@ const App = () => {
         setOrders(orders.filter((order) => order.id !== id));
     };
 
+    const editOrder = (editedOrder) => {
+        const index = orders.findIndex((order) => order.id === editedOrder.id);
+        orders[index] = editedOrder;
+    };
+
     return (
         <Routes>
             <Route
                 path="/orders/create"
-                element={<OrderCreationPage createOrder={createOrder} />}
+                element={<OrderCreationPage creationHandler={createOrder} />}
+            />
+            <Route
+                path="/orders/edit/:id"
+                element={
+                    <OrderEditionPage orders={orders} editHandler={editOrder} />
+                }
             />
             <Route
                 path="/orders"
