@@ -1,7 +1,8 @@
 import React from "react";
-import DetailsButton from "./DetailsButton";
+import Button from "./UI/Button/Button";
 
 import "../styles/Order.css";
+
 
 const Order = ({ orderData, detailsHandler }) => {
     const showDetails = () => {
@@ -16,7 +17,7 @@ const Order = ({ orderData, detailsHandler }) => {
                 <p className="order-status">{orderData.status}</p>
             </div>
             <div className="order-buttons">
-                <DetailsButton handleClick={showDetails}>Details</DetailsButton>
+                <Button onClick={showDetails}>Details</Button>
             </div>
         </div>
     );

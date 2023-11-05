@@ -1,4 +1,4 @@
-.DetailsButton {
+.button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,11 +8,11 @@
     font-size: 17px;
 }
 
-.DetailsButton:hover {
+.button:hover {
     cursor: pointer;
     background-color: #b9b1ab;
 }
 
-.DetailsButton:active {
+.button:active {
   scale: 0.95;
 }
