@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "./UI/Button/Button";
+import { Button } from "@mui/material";
 
 import classes from "../styles/Order.module.css";
 
@@ -15,13 +15,13 @@ const Order = ({ orderData, detailsHandler, deleteHandler }) => {
                 <p className={classes.orderStatus}>{orderData.status}</p>
             </div>
             <div className={classes.orderButtons}>
-                <Button onClick={() => detailsHandler(orderData)}>
+                <Button variant="outlined" onClick={() => detailsHandler(orderData)}>
                     Details
                 </Button>
-                <Button onClick={() => router(`/orders/edit/${orderData.id}`)}>
+                <Button variant="outlined" onClick={() => router(`/orders/edit/${orderData.id}`)}>
                     Edit
                 </Button>
-                <Button onClick={() => deleteHandler(orderData.id)}>
+                <Button variant="outlined" onClick={() => deleteHandler(orderData.id)}>
                     Delete
                 </Button>
             </div>
